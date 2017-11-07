@@ -133,7 +133,7 @@ export interface Options {
    * [official documentation]{@link
    * https://cloud.google.com/logging/docs/api/reference/rest/v2/MonitoredResource}.
    */
-  resource?: any;
+  resource?: MonitoredResource;
   /**
    * For logged errors, we provide this as the service context. For more
    * information see [this guide]{@link
@@ -258,11 +258,11 @@ export interface Options {
  * Full quickstart example:
  */
 
-class LoggingWinston extends winston.Transport{
+class LoggingWinston extends winston.Transport {
   inspectMetadata: boolean;
   levels: {[name: string]: number};
-  stackdriverLog: any;
-  resource: any;
+  stackdriverLog: (name: string, options?: {removeCircular?: boolean}) => void;
+  resource: MonitoredResource|undefined;
   serviceContext: ServiceContext|undefined;
   static readonly LOGGING_TRACE_KEY = LOGGING_TRACE_KEY;
   constructor(options: Options) {

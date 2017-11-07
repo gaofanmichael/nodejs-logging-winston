@@ -75,12 +75,11 @@ describe('logging-winston', function() {
   });
 
   describe('instantiation', function() {
-    it.only('nnnnnn', function() {
+    it.skip('wrong case', function() {
       var loggingWinston = LoggingWinston();
-
       // assert(loggingWinston instanceof LoggingWinston);
     });
-    it('should create a new instance of LoggingWinston', function() {
+    it.skip('should create a new instance of LoggingWinston', function() {
       // jshint newcap:false
       var loggingWinston = LoggingWinston(OPTIONS);
 
